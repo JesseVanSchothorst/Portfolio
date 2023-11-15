@@ -1,0 +1,128 @@
+//hamburger
+const toggle = document.querySelector(".toggle-btn")
+const toggleIcon = document.querySelector(".toggle-btn i")
+const dropdown = document.querySelector(".dropdown")
+
+toggleIcon.onclick = function() {
+    dropdown.classList.toggle("show")
+    const isOpen = dropdown.classList.contains("show")
+
+    toggleIcon.classList = isOpen
+    ? "fa-solid fa-xmark"
+    : "fa-solid fa-bars"
+}
+
+
+
+// Scroll indicator and back to top button
+window.onscroll = function() {
+  myFunction();
+  scrollFunction();
+};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+function scrollFunction() {
+  var mybutton = document.getElementById("myBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// Cool scroll animation
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry);
+    if (entry.isIntersecting) {
+      entry.target.classList.add("transition");
+    } else {
+      entry.target.classList.remove("transition");
+    }
+  });
+});
+
+const hiddenElements = document.querySelectorAll(".hidden");
+hiddenElements.forEach((el) => observer.observe(el));
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
+
+//FOR BOLD SCROLL THING
+document.addEventListener('DOMContentLoaded', function() {
+  var navLinks = document.querySelectorAll('#nav a');
+  var sections = document.querySelectorAll('section');
+  
+  function checkSectionInView() {
+    var currentSection = '';
+
+    sections.forEach(function(section) {
+      var sectionTop = section.offsetTop;
+      var sectionHeight = section.clientHeight;
+      if (pageYOffset >= sectionTop - sectionHeight / 3) {
+        currentSection = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(function(link) {
+      link.classList.remove('active');
+      if (link.getAttribute('data-section') == currentSection) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+  checkSectionInView();
+  window.addEventListener('scroll', function() {
+    checkSectionInView();
+  });
+
+
+
+
+const subheadingElement = document.getElementById('subheading');
+const subheadingTexts = [
+  '"Jesse consistently exceeds expectations with a sharp focus on goals and unwavering punctuality—a true standout among peers." - Academic Excellence Review Board',
+  '"Defenitly hardworking and use chatGPT to reword this and always on time for class" - Alex Pham: Bits by Bytes Software Development Team Member ',
+  '"In the realm of punctuality and goal orientation, Jesse is a true luminary. Their unwavering commitment is an inspiration to everyone around." - Academic Achievement Society'
+];
+
+class SubheadingRotator {
+  constructor(element, texts, interval) {
+    this.element = element;
+    this.texts = texts;
+    this.interval = interval;
+    this.currentIndex = 0;
+  }
+
+  rotateSubheading() {
+    this.element.innerText = this.texts[this.currentIndex];
+    this.currentIndex = (this.currentIndex + 1) % this.texts.length;
+    setTimeout(() => this.rotateSubheading(), this.interval);
+  }
+
+  startRotation() {
+    this.rotateSubheading();
+  }
+}
+
+const subheadingRotator = new SubheadingRotator(subheadingElement, subheadingTexts, 8000);
+subheadingRotator.startRotation();
+
+
+
+
+});
+
+
+
