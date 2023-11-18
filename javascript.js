@@ -16,25 +16,31 @@ toggleIcon.onclick = function() {
 
 // Scroll indicator and back to top button
 window.onscroll = function() {
-  myFunction();
-  scrollFunction();
+    myFunction();
+    scrollFunction();
 };
 
 function myFunction() {
-  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  var scrolled = (winScroll / height) * 100;
-  document.getElementById("myBar").style.width = scrolled + "%";
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    var scrolled = (winScroll / height) * 100;
+    document.getElementById("myBar").style.width = scrolled + "%";
 }
 
 function scrollFunction() {
-  var mybutton = document.getElementById("myBtn");
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    var mybutton = document.getElementById("myBtn");
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
+
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+}
+
 
 // Cool scroll animation
 const observer = new IntersectionObserver((entries) => {
@@ -92,8 +98,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const subheadingElement = document.getElementById('subheading');
 const subheadingTexts = [
-  '"Jesse consistently exceeds expectations with a sharp focus on goals and unwavering punctuality—a true standout among peers." - Academic Excellence Review Board',
-  '"Defenitly hardworking and use chatGPT to reword this and always on time for class" - Alex Pham: Bits by Bytes Software Development Team Member ',
+ '"Jesse exceeds expectations with a sharp focus on goals and punctuality" - Tim Frantz; Lethbridge College Proffessor',
+  '"Always works hard towards completion of tasks, Always there to help others as well" - Alex Pham; Bits by Bytes Software Development Team Member ',
   '"In the realm of punctuality and goal orientation, Jesse is a true luminary. Their unwavering commitment is an inspiration to everyone around." - Academic Achievement Society'
 ];
 
@@ -105,11 +111,14 @@ class SubheadingRotator {
     this.currentIndex = 0;
   }
 
-  rotateSubheading() {
+rotateSubheading() {
+    console.log("Rotating subheading...");
     this.element.innerText = this.texts[this.currentIndex];
     this.currentIndex = (this.currentIndex + 1) % this.texts.length;
+    console.log("New index:", this.currentIndex);
     setTimeout(() => this.rotateSubheading(), this.interval);
-  }
+}
+
 
   startRotation() {
     this.rotateSubheading();
@@ -118,9 +127,6 @@ class SubheadingRotator {
 
 const subheadingRotator = new SubheadingRotator(subheadingElement, subheadingTexts, 8000);
 subheadingRotator.startRotation();
-
-
-
 
 });
 

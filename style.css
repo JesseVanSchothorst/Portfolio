@@ -80,6 +80,7 @@ header {
     font-size: 40px;
     font-weight: bold;
     text-decoration: none;
+
 }
 .nav-bar .logo-name a{
     text-decoration: none;
@@ -186,10 +187,6 @@ header {
     width: 30px;
 }
 
-
-
-
-/*CSS Whole Nav RESPONSIVE*/
 @media (max-width: 992px) {
     .nav-bar .nav-links,
     .nav-bar .web-links {
@@ -204,51 +201,27 @@ header {
     }
 }
 
-.progress-bar {
-    height: 4px;
-    background: orange;
-    width: 0%;
-    padding:0;
-    margin:0;
-}
-
 
 
 #myBtn {
     display: none;
-    /* Hidden by default */
     position: fixed;
-    /* Fixed/sticky position */
     bottom: 20px;
-    /* Place the button at the bottom of the page */
     right: 30px;
-    /* Place the button 30px from the right */
     z-index: 99;
-    /* Make sure it does not overlap */
     border: none;
-    /* Remove borders */
     outline: none;
-    /* Remove outline */
     background-color: rgb(205, 116, 0);
-    /* Set a background color */
     color: white;
-    /* Text color */
     cursor: pointer;
-    /* Add a mouse pointer on hover */
     padding: 15px;
-    /* add greater width */
     width: 50px;
-    /* Some padding */
-    border-radius: 100%;
-    /* Rounded corners */
+    border-radius: 50%;
     font-size: 18px;
-    /* Increase font size */
 }
+
 #myBtn:hover {
     background-color: black;
-    /* Add a dark-grey background on hover */
-}
-.back_to_top:hover i {
     transform: translateY(-3px);
 }
 
@@ -260,10 +233,6 @@ header {
     margin: 0 auto;
     padding: 20px;
 }
-
-
-
-
 .wrapper h1{
     color: rgb(205, 116, 0);
 }
@@ -275,99 +244,46 @@ header {
 
 
 
-.s-one{
+.s-one {
     min-height: 100vh;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    align-items: center; 
+    align-items: center;
 }
-.s-one .s-one-img img{
+
+.s-one .s-one-img img {
+    max-width: 500px;
     height: 500px;
     border-radius: 50%;
-}
-.s-one .s-one-text h1{
-    font-size: 7rem;
-}
-.s-one .s-one-text h2 {
-    font-size: 2rem;
-    color: black;
+    margin-left: 20px;
 }
 
-
-/*CSS Whole Nav RESPONSIVE*/
-@media (max-width: 992px) {
-    .s-one .s-one-img img {
-        height: 300px;
-        border-radius: 50%;
-    }
-
-    .s-one .s-one-text h1{
-        font-size: 70px;
-    }
-}
-@media (max-width: 760px) {
-    .s-one {
-        grid-template-columns: 1fr;
-        justify-items: center;
-        align-items: center;
-        text-align: center;
-        position: relative;
-    }
-    .s-one .s-one-img img {
-        height: 280px;
-        border-radius: 50%;
-        grid-row: 1 / span 1;
-        margin-top: -12rem;
-    }
-    .s-one .s-one-text{
-        grid-row: 1 / span 1;
-        position: absolute;
-        top: 76%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .s-one .s-one-text h1 {
-        font-size: 4rem;
-    }
+.s-one .s-one-text {
+    text-align:left;
 }
 
-.s-one .slideshow {
-    font-size: 24px;
-    margin-top: -8rem;
+.s-one .s-one-text h1 {
+    font-size: 8rem;
+    margin-top: 20px;
+}
+
+/* Slideshow styles */
+.slideshow {
+    margin-top: -80px;
     grid-column: span 2;
     text-align: center;
-    color: #333;
-    /* Adjust color as needed */
 }
 
-.s-one .slideshow {
-    font-size: 24px;
-    margin-top: -6rem;
-    /* Adjust margin-top value */
-    grid-column: span 2;
-    text-align: center;
-    color: #333;
-    /* Adjust color as needed */
-}
-
-.slideshow{
-    box-shadow: 0 5px rgba(0, 0, 0, 0.1);
-}
 .slideshow-text {
-    opacity: 0;
+    font-size: 2rem;
+    opacity: 1;
     animation: fadeInOut 8s infinite ease-in-out;
-    /* Adjust animation duration and timing function */
-    animation-fill-mode: forwards;
-    padding: 15px;
-    /* Adjust padding for better spacing */
-    background-color: rgba(255, 255, 255, 0.8);
-    /* Adjust background color transparency */
-    border-radius: 10px;
-    /* Add rounded corners for a softer look */
-    
-    /* Add a subtle box shadow */
     overflow: hidden;
-    /* Ensure text doesn't overflow */
+    transition: opacity 0.8s ease;
+}
+
+.slideshow:hover .slideshow-text {
+    opacity: 1;
 }
 
 @keyframes fadeInOut {
@@ -385,6 +301,95 @@ header {
     }
 }
 
+@media (max-width: 1280px) {
+    .s-one .s-one-img img {
+        height: 350px;
+        width: 350px;
+        margin-left: 80px;
+    }
+
+    .s-one .s-one-text h1 {
+        font-size: 5rem;
+    }
+
+.slideshow-text {
+    font-size: 1.5rem;
+}
+                .slideshow-text {
+                    margin-top: -120px;
+                }
+}
+
+@media (max-width: 992px) {
+    .s-one {
+        min-height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        /* Change to create a single column */
+        align-items: center;
+        text-align: center;
+    }
+
+    .s-one .s-one-img img {
+        max-width: 100%;
+        /* Ensure the image scales within the container */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin-left: 0;
+        /* Remove the left margin */
+    }
+
+    .s-one .s-one-text {
+        text-align: center;
+        /* Center the text */
+    }
+
+    .s-one .s-one-text h1 {
+        margin-top: -120px;
+        /* Add some top margin for spacing */
+        font-size: 4rem;
+    }
+
+    .slideshow {
+
+        text-align: center;
+        margin: 0 auto;
+        grid-column: span 1;
+        /* Ensure the slideshow takes full width */
+    }
+        .slideshow-text {
+            margin-top: -140px;
+        }
+}
+@media (max-width: 400px) {
+    
+        .s-one .s-one-img img {
+
+                    height: 300px;
+                        width: 300px;
+        }
+    
+        .s-one .s-one-text h1{
+            font-size: 1rem;
+        }
+    
+        .s-one .s-one-text h1 {
+            margin-top: -120px;
+            /* Add some top margin for spacing */
+            font-size: 4rem;
+        }
+
+    .slideshow-text {
+        display: none;
+    }
+}
+
+
+
+
+
+
+
 
 
 .s-two{
@@ -401,23 +406,24 @@ header {
     height: 500px;
     border-radius: 10%;    
 }
-        .s-two .s-two-text h2 {
+.s-two .s-two-text h2 {
             line-height: 1.3;
             padding-bottom: 20px;
             font-size: 3.4rem;
             text-align: justify;
-        }
-                .s-two .s-two-text h3 {
+}
+.s-two .s-two-text h3 {
                     line-height: 1.2;
                     padding-bottom: 15px;
                     font-size: 2rem;
                     text-align: justify;
-                }
-        .s-two .s-two-text p{
+}
+.s-two .s-two-text p{
             line-height: 2;
             text-align: justify;
             font-size: 1.4rem;
-        }
+}
+
 @media (max-width: 800px) {
     .s-two {
         grid-template-columns: 1fr;
@@ -457,10 +463,7 @@ header {
     gap:10rem;
     padding:100px;
 }
-.calendar{
-    width:100% !important;
-    grid-column: span 2;
-}
+
 
 
 .s-three-logo-container > * {
@@ -471,10 +474,6 @@ flex-direction: row;
 .s-three-logo-container img{
     height: 150px;
     width: 150px;
-}
-.git{
-    display: none;
-    grid-column: span 2;
 }
 @media (max-width: 1500px) {
 .s-three-logo-container img {
@@ -527,160 +526,43 @@ flex-direction: row;
 }
 
 
-
-.s-four{
+/* Work/Experience */
+.s-four {
     min-height: 100vh;
-        height: auto;
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        align-items: center;
-        text-align: left;
-        line-height: 1.6;
-        place-items: center;
-}
-.s-four .card {
-    color:white;
-    background-image: url(images/temp.jpg);
-    background-size: COVER;
-    padding: 15rem 1rem 1rem;
-    max-width: 45ch;
-    font-size: 1rem;
-    border-radius: .5rem;
-    overflow: hidden;
-
-    transition: transform 500ms ease;
-}
-.s-four .card:hover{
-    transform: scale(1.05);
-}
-
-.s-four .card h2{
-    color: white;
-    font-size: 2rem;
-    font-weight: bold;
-}
-.s-four .card-content {
-    padding: 1em;
-    background: linear-gradient(
-        hsl(0 0% 0% / 0.1),
-        hsl(0 0% 0% / 0.5));
-
-    transform: translateY(77%);
-    transition: transform 500ms ease;
-}
-.s-four .card:hover{
-    transform: scale(1.05);
-}
-.s-four .card:hover .card-content{
-    transform: translateY(0);
-    transition-delay: 500ms;
-}
-.s-four .card-content p{
-    padding-top: 5px;
-    padding-bottom: 20px;
-    font-size: .7;
-}
-.card-title{
-    position: relative;
-    max-width: fit-content;
-}
-.s-four .card-title::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    background:rgb(205, 116, 0);
-    width:100%;
-    transform: scaleX(0);
-
-    transform-origin: left;
-
-    transition: transform 500ms ease;
-}
-.card:hover .card-title::after {
-    transform: scaleX(1);
-}
-.s-four .button {
-    cursor: pointer;
-    display: inline;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    background-color: rgb(205, 116, 0);
-    border-radius: 5px;
-    padding: 0.5em 1.55em;
-}
-.s-four .button:hover,
-.s-four .button:focus
-{
-    background-color: rgb(255, 255, 255);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.6;
 }
 
 .title {
     font-size: 5rem;
 }
 
-
-
-
-
-
-
-
-/* MY CONTACT ME STUFF */
-
-.s-five{
-    min-height: 100vh;
-        height: auto;
-        display: grid;
-        align-items: center;
-        text-align: center;
-}
-label {
-    display: block;
-    margin-top: 32px;
-    margin-bottom: 5px;
-    font-weight: bold;
-    font-size: 22px;
-    color:rgb(205, 116, 0);
-}
-input,
-textarea {
+.work {
+    margin-bottom: 20px;
     width: 80%;
-    padding: 10px;
-    border: 2px solid grey;
-    border-radius: 4px;
-    font-size: 20px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-textarea {
-    height: 120px;
-    resize: none;
-}
-.btn_submit {
-    background-color: rgb(205, 116, 0);
-    color: black;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 120px;
-}
-.btn_submit:hover {
-    background-color: white;
-}
-@media (max-width: 400px) {
 
-    input,
-    textarea {
-        width: 60%;
-        padding: 10px;
-        border: 2px solid grey;
-        border-radius: 4px;
-        font-size: 1em;
-    }
+.job-title {
+    font-weight: bold;
+    font-size: 2rem;
+    /* Adjust the font size as needed */
+}
+
+.company {
+    color: #666;
+}
+
+.date {
+    color: #999;
 }
 
 
