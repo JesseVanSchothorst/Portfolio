@@ -462,6 +462,7 @@ header {
 }
 .s-three-text{
     transform: rotate(-90deg);
+    text-align: center;
 }
 .s-three-logo-container{
     display:flex;
