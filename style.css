@@ -544,7 +544,7 @@ flex-direction: row;
     flex-grow: 1;
         display: flex;
         justify-content: center;
-        align-content: flex-start;
+        align-content: center;
         align-items: stretch;
         align-content: stretch;
         gap: 10px;
