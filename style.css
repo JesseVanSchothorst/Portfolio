@@ -30,6 +30,11 @@ body{
         transition:none;
     }
 }
+@media (max-width: 500px) {
+    .hidden {
+            transition: none;
+        }
+}
 
 
 /*LINKS IN CENTER*/
