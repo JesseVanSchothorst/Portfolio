@@ -289,7 +289,7 @@ header {
 }
 
 .slideshow-text {
-    font-size: 2rem;
+    font-size: 1.8rem;
     opacity: 1;
     animation: fadeInOut 8s infinite ease-in-out;
     overflow: hidden;
@@ -327,7 +327,7 @@ header {
     }
 
 .slideshow-text {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
                 .slideshow-text {
                     margin-top: -120px;
@@ -339,28 +339,28 @@ header {
         min-height: 100vh;
         display: grid;
         grid-template-columns: 1fr;
-        /* Change to create a single column */
+        
         align-items: center;
         text-align: center;
     }
 
     .s-one .s-one-img img {
         max-width: 100%;
-        /* Ensure the image scales within the container */
+        
         height: auto;
-        /* Maintain aspect ratio */
+        
         margin-left: 0;
-        /* Remove the left margin */
+        
     }
 
     .s-one .s-one-text {
         text-align: center;
-        /* Center the text */
+        
     }
 
     .s-one .s-one-text h1 {
         margin-top: -120px;
-        /* Add some top margin for spacing */
+        
         font-size: 4rem;
     }
 
@@ -395,6 +395,11 @@ header {
 
     .slideshow-text {
         display: none;
+        font-size: 1rem;
+        
+                       
+                                margin-top: -120px;
+                           
     }
 }
 
@@ -451,7 +456,7 @@ header {
         align-items: center;
         text-align: center;
         position: relative;
-        /* Set the container to relative position */
+    
     }
     .s-two .s-two-img img {
 
@@ -549,6 +554,10 @@ flex-direction: row;
 /* Work/Experience */
 #experience.s-four {
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Container Styles */
@@ -561,7 +570,7 @@ flex-direction: row;
 .section-heading {
     font-size: 1.5em;
     font-weight: bold;
-    color: #333;
+    color: rgb(205, 116, 0);
     margin-bottom: 10px;
 }
 
@@ -604,6 +613,7 @@ flex-direction: row;
                     display: flex;
                     justify-content: space-around;
                     flex-wrap: wrap;
+                    text-decoration: none;
                 }
         
                 .footer-section {
@@ -619,7 +629,6 @@ flex-direction: row;
                     color: #333;
                 }
                 .footer a {
-                    
                     margin: 10px;
                     padding: 10px;
                     border-radius: 10px;

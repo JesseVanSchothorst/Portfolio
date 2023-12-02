@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const subheadingElement = document.getElementById('subheading');
 const subheadingTexts = [
- '"Jesse exceeds expectations with a sharp focus on goals and punctuality" - Tim Frantz; Lethbridge College Proffessor',
+ '"Jesse frequently exceeds expectations as a result of his sharp focus on identifying and meeting goals which lead to timely, accurate, and thorough fulfillment of deliverables." - Tim Frantz; Lethbridge College Proffessor',
   '"Always works hard towards completion of tasks, Always there to help others as well" - Alex Pham; Bits by Bytes Software Development Team Member ',
-  '"In the realm of punctuality and goal orientation, Jesse is a true luminary. Their unwavering commitment is an inspiration to everyone around." - Academic Achievement Society'
+  '"You can count on Jesse to cover for anyone and shows up to work early everytime" - Coworker from Sobeys Uplands'
 ];
 
 class SubheadingRotator {
