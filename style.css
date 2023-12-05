@@ -395,11 +395,7 @@ header {
 
     .slideshow-text {
         display: none;
-        font-size: 1rem;
-        
-                       
-                                margin-top: -120px;
-                           
+        font-size: 1rem;                   
     }
 }
 
@@ -572,6 +568,7 @@ flex-direction: row;
     font-weight: bold;
     color: rgb(205, 116, 0);
     margin-bottom: 10px;
+    text-align: center;
 }
 
 /* Content Container Styles */
@@ -614,6 +611,7 @@ flex-direction: row;
                     justify-content: space-around;
                     flex-wrap: wrap;
                     text-decoration: none;
+                    margin-top: 50px;
                 }
         
                 .footer-section {
@@ -621,6 +619,7 @@ flex-direction: row;
                     font-size: 20px;
                     color: black;
                     text-decoration: none;
+                    margin-top: 20px;
                 }
         
                 .footer-heading {

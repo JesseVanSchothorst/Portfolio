@@ -98,9 +98,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const subheadingElement = document.getElementById('subheading');
 const subheadingTexts = [
- '"Jesse frequently exceeds expectations as a result of his sharp focus on identifying and meeting goals which lead to timely, accurate, and thorough fulfillment of deliverables." - Tim Frantz; Lethbridge College Proffessor',
+ '"Jesse frequently exceeds expectations as a result of his sharp focus on identifying and meeting goals which lead to timely, accurate, and thorough fulfillment of deliverables." - Tim Frantz; Lethbridge College Professor',
   '"Always works hard towards completion of tasks, Always there to help others as well" - Alex Pham; Bits by Bytes Software Development Team Member ',
-  '"You can count on Jesse to cover for anyone and shows up to work early everytime" - Coworker from Sobeys Uplands'
+  '"You can count on Jesse to cover for anyone and shows up to work early everytime" - Coworker; Sobeys Uplands'
 ];
 
 class SubheadingRotator {
@@ -112,7 +112,6 @@ class SubheadingRotator {
   }
 
 rotateSubheading() {
-    console.log("Rotating subheading...");
     this.element.innerText = this.texts[this.currentIndex];
     this.currentIndex = (this.currentIndex + 1) % this.texts.length;
     console.log("New index:", this.currentIndex);
